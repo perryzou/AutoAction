@@ -9,4 +9,4 @@
 
 **1.天气预报**
 
-<img src="https://raw.githubusercontent.com/perryzou/AutoAction/main/res/weather.jpg" width = "250" height = "300" alt="绘制脸部轮廓" />
+<img src="https://raw.githubusercontent.com/perryzou/AutoAction/main/res/weather.jpg" width = "250" height = "444" alt="绘制脸部轮廓" />
