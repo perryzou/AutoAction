@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: weather
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '40 7 * * *'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -26,4 +26,4 @@ jobs:
         architecture: 'x64'
     # You can test your matrix by printing the current Python version
     - name: run python
-      run: python test.py
+      run: python weather.py
