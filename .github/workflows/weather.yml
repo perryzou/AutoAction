@@ -25,5 +25,9 @@ jobs:
         # Optional - x64 or x86 architecture, defaults to x64
         architecture: 'x64'
     # You can test your matrix by printing the current Python version
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
     - name: run python
       run: python weather.py
