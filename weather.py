@@ -28,14 +28,22 @@ def now_and_future_twodays_weather():
     daily_forecast = forecast_res_json['daily']
     return updateTime, daily_forecast
 
+def getRemark():
+    url="https://v1.hitokoto.cn/"
+    forecast_res = requests.get(url)
+    return forecast_res.json()
+
+
 
 def main():
     now = now_weather()
-
     updateTime, daily_forecast = now_and_future_twodays_weather()
+    remark = getRemark()
+
     today = daily_forecast[0]
-    msg = '''当前天气：%s\t|\t气温：%s度\t|\t体感：%s度\t\n夜间天气：%s\t|\t最高：%s度\t|\t最低：%s度\t''' \
-          % (now['text'], now['temp'], now['feelsLike'], today['textNight'], today['tempMax'], today['tempMin'])
+    msg = '''当前天气：%s\t|\t气温：%s度\t|\t体感：%s度\t\n夜间天气：%s\t|\t最高：%s度\t|\t最低：%s度\t\n%s\t--%s''' \
+          % (now['text'], now['temp'], now['feelsLike'], today['textNight'], today['tempMax'], today['tempMin'],
+             remark['hitokoto'],remark['from'])
     send(msg)
 
 
