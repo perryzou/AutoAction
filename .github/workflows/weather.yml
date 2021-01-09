@@ -30,4 +30,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: run python
-      run: python weather.py
+      run: python weather.py -w ${{ secrets.weather }} -b ${{ secrets.bark }} -c ${{ secrets.city }}
