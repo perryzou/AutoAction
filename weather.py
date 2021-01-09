@@ -13,13 +13,11 @@ class WeatherTask:
     def send(self, msg):
         print(msg)
         url = "https://api.day.app/%s/今日天气预报/%s" % (self.b, urllib.parse.quote(msg))
-        # url = "https://api.day.app/MQiDfGtNgX3jAgCRKmohrf/今日天气预报/" + urllib.parse.quote(msg)
         requests.get(url)
         pass
 
     # 获取今天当前部分信息数据
     def now_weather(self, ):
-        # url = 'https://devapi.heweather.net/v7/weather/now?location=101270119&key=818c832c460b46cd84e4ad34b75aca26'
         url = 'https://devapi.heweather.net/v7/weather/now?location=%s&key=%s' % (self.c, self.w)
         now_res = requests.get(url)
         now_res_json = now_res.json()
