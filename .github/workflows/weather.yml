@@ -6,7 +6,7 @@ name: weather
 on:
   push:
   schedule:
-    - cron: 40 23 * * *
+    - cron: 0 0,10 * * *
   watch:
     types: started
   workflow_dispatch:
